@@ -31,9 +31,9 @@
 .header{
   width:100%;
   position:fixed;
-  top:14px;
+  top:calc(env(safe-area-inset-top) + 14px);
   left:0;
-  z-index:1000;
+  z-index:9999;
   pointer-events:none;
 }
 
@@ -124,7 +124,7 @@
 @media(max-width:760px){
 
   .header{
-    top:10px;
+    top:calc(env(safe-area-inset-top)+ 12px)
   }
 
   .header-container{
