@@ -9,16 +9,19 @@
 .loader{
   position:fixed;
   inset:0;
-  z-index:10000;
+  z-index:2147483647;
   display:grid;
   place-items:center;
   background:#000;
-  transition:opacity .6s ease, visibility .6s ease;
+  opacity:1;
+  visibility:visible;
+  transition:opacity .55s ease, visibility .55s ease;
 }
 
 .loader.hide{
   opacity:0;
   visibility:hidden;
+  pointer-events:none;
 }
 
 .loader-inner{
@@ -26,7 +29,7 @@
   flex-direction:column;
   align-items:center;
   gap:18px;
-  animation:loaderIn .8s ease forwards;
+  animation:loaderIn .7s ease forwards;
 }
 
 .loader-inner img{
@@ -35,30 +38,37 @@
 }
 
 .loader-inner span{
-  color:rgba(255,255,255,.55);
+  color:rgba(255,255,255,.52);
   font-size:.72rem;
   letter-spacing:.18em;
   text-transform:uppercase;
 }
 
 @keyframes loaderIn{
-  from{opacity:0; transform:translateY(10px);}
-  to{opacity:1; transform:translateY(0);}
+  from{
+    opacity:0;
+    transform:translateY(10px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
 }
 
 @media(max-width:760px){
   .loader-inner img{
-    width:170px;
+    width:180px;
   }
 }
 </style>
 
-<script>
+<script is:inline>
   const loader = document.querySelector("#loader");
 
   window.addEventListener("load", () => {
     setTimeout(() => {
       loader?.classList.add("hide");
-    }, 850);
+    }, 900);
   });
 </script>

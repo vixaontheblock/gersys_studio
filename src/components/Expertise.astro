@@ -1,0 +1,127 @@
+<section class="expertise" id="expertise">
+  <div class="container">
+    <div class="expertise-head">
+      <p class="eyebrow">FORMACIÓN & EXPERTISE</p>
+      <h2 class="title">Color con técnica, estudio y visión.</h2>
+    </div>
+
+    <div class="expertise-grid">
+      <article class="expertise-card featured">
+        <span>01</span>
+        <h3>Master Class con Romeu Felipe</h3>
+        <p>
+          Formación enfocada en blondes, mechas y técnicas modernas de iluminación junto a Romeu Felipe, reconocido Wella Professionals Global Ambassador.
+        </p>
+      </article>
+
+      <article class="expertise-card">
+        <span>02</span>
+        <h3>Master Class Brûlée</h3>
+        <p>
+          Entrenamiento en coloración, balayage, tratamientos capilares y styling con Brûlée Love For Hair.
+        </p>
+      </article>
+
+      <article class="expertise-card">
+        <span>03</span>
+        <h3>Colorista Diamond Pro</h3>
+        <p>
+          Certificación profesional de colorimetría y perfeccionamiento intensivo con 80 horas académicas.
+        </p>
+      </article>
+
+      <article class="expertise-card">
+        <span>04</span>
+        <h3>Open Hair Touch</h3>
+        <p>
+          Full Day Training enfocado en técnicas de cabello, asistencia profesional y actualización continua.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<style>
+.expertise{
+  padding:110px 0;
+  background:#000;
+  color:#fff;
+}
+
+.expertise-head{
+  margin-bottom:48px;
+}
+
+.eyebrow{
+  font-size:.76rem;
+  letter-spacing:.18em;
+  color:#aaa;
+  margin-bottom:18px;
+}
+
+.expertise-head h2{
+  font-size:clamp(3rem, 8vw, 8rem);
+  max-width:1100px;
+}
+
+.expertise-grid{
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  gap:14px;
+}
+
+.expertise-card{
+  min-height:340px;
+  border:1px solid #242424;
+  border-radius:30px;
+  padding:24px;
+  background:
+    radial-gradient(circle at 85% 0%, rgba(255,255,255,.10), transparent 34%),
+    #0d0d0d;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+
+.expertise-card.featured{
+  grid-column:span 2;
+  background:#fff;
+  color:#000;
+}
+
+.expertise-card span{
+  color:#888;
+  font-size:.8rem;
+}
+
+.expertise-card h3{
+  font-family:'Archivo Black', sans-serif;
+  text-transform:uppercase;
+  font-size:clamp(1.8rem, 3vw, 3.4rem);
+  line-height:.9;
+}
+
+.expertise-card p{
+  color:inherit;
+  opacity:.75;
+  line-height:1.55;
+  max-width:520px;
+}
+
+@media(max-width:900px){
+  .expertise{
+    padding:76px 0;
+  }
+
+  .expertise-grid{
+    grid-template-columns:1fr;
+  }
+
+  .expertise-card,
+  .expertise-card.featured{
+    grid-column:auto;
+    min-height:260px;
+    border-radius:24px;
+  }
+}
+</style>
