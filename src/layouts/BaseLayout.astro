@@ -18,6 +18,7 @@ const schema = {
   "url": url,
   "telephone": "+50767631224",
   "image": fullImageUrl,
+
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Plaza Villas del Golf, local #4",
@@ -25,14 +26,27 @@ const schema = {
     "addressRegion": "Panamá",
     "addressCountry": "PA"
   },
-  "areaServed": ["Brisas del Golf", "San Miguelito", "Panamá"],
+
+  "areaServed": [
+    "Brisas del Golf",
+    "San Miguelito",
+    "Panamá"
+  ],
+
   "openingHoursSpecification": [
     {
       "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      "dayOfWeek": [
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+      ],
       "opens": "09:00",
       "closes": "19:00"
     },
+
     {
       "@type": "OpeningHoursSpecification",
       "dayOfWeek": "Sunday",
@@ -40,83 +54,270 @@ const schema = {
       "closes": "16:00"
     }
   ],
+
   "sameAs": [
     "https://www.instagram.com/gersyshairstudio/",
     "https://www.tiktok.com/@gersyshairstudio"
   ],
+
   "makesOffer": [
-    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Balayage" } },
-    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Coloración" } },
-    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Manicura" } },
-    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pedicura" } },
-    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Keratina" } },
-    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Maquillaje" } }
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Balayage"
+      }
+    },
+
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Coloración"
+      }
+    },
+
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Manicura"
+      }
+    },
+
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Pedicura"
+      }
+    },
+
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Keratina"
+      }
+    },
+
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Maquillaje"
+      }
+    }
   ]
 };
 ---
 
+<!DOCTYPE html>
+
+<html lang="es">
 
 <head>
-<!DOCTYPE html>
-<html lang="es">
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-22J5KG4VX2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-22J5KG4VX2');
-</script>
   <meta charset="UTF-8" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
 
   <title>{title}</title>
-  <meta name="description" content={description} />
-  <meta name="robots" content="index, follow" />
-  <meta name="author" content="Rupta Studios" />
 
-  <link rel="canonical" href={url} />
+  <meta
+    name="description"
+    content={description}
+  />
 
-  <meta name="geo.region" content="PA" />
-  <meta name="geo.placename" content="Brisas del Golf, Panamá" />
-  <meta name="geo.position" content="9.0600;-79.4700" />
-  <meta name="ICBM" content="9.0600, -79.4700" />
+  <meta
+    name="robots"
+    content="index, follow"
+  />
 
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content={title} />
-  <meta property="og:description" content={description} />
-  <meta property="og:url" content={url} />
-  <meta property="og:image" content={fullImageUrl} />
-  <meta property="og:image:secure_url" content={fullImageUrl} />
-  <meta property="og:image:type" content="image/jpeg" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:locale" content="es_PA" />
-  <meta property="og:site_name" content="Gersys Hair Studio" />
+  <meta
+    name="author"
+    content="Rupta Studios"
+  />
 
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content={title} />
-  <meta name="twitter:description" content={description} />
-  <meta name="twitter:image" content={fullImageUrl} />
+  <link
+    rel="canonical"
+    href={url}
+  />
 
-  <link rel="icon" href="/favicon-gersys.ico" sizes="any" />
-  <link rel="icon" href="/favicon-gersys.svg" type="image/svg+xml" />
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <!-- GOOGLE ANALYTICS -->
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-22J5KG4VX2"
+  >
+  </script>
+
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag(){
+      dataLayer.push(arguments);
+    }
+
+    gtag("js", new Date());
+
+    gtag("config", "G-22J5KG4VX2");
+  </script>
+
+  <!-- GEO -->
+
+  <meta
+    name="geo.region"
+    content="PA"
+  />
+
+  <meta
+    name="geo.placename"
+    content="Brisas del Golf, Panamá"
+  />
+
+  <meta
+    name="geo.position"
+    content="9.0600;-79.4700"
+  />
+
+  <meta
+    name="ICBM"
+    content="9.0600, -79.4700"
+  />
+
+  <!-- OPEN GRAPH -->
+
+  <meta
+    property="og:type"
+    content="website"
+  />
+
+  <meta
+    property="og:title"
+    content={title}
+  />
+
+  <meta
+    property="og:description"
+    content={description}
+  />
+
+  <meta
+    property="og:url"
+    content={url}
+  />
+
+  <meta
+    property="og:image"
+    content={fullImageUrl}
+  />
+
+  <meta
+    property="og:image:secure_url"
+    content={fullImageUrl}
+  />
+
+  <meta
+    property="og:image:type"
+    content="image/jpeg"
+  />
+
+  <meta
+    property="og:image:width"
+    content="1200"
+  />
+
+  <meta
+    property="og:image:height"
+    content="630"
+  />
+
+  <meta
+    property="og:locale"
+    content="es_PA"
+  />
+
+  <meta
+    property="og:site_name"
+    content="Gersys Hair Studio"
+  />
+
+  <!-- TWITTER -->
+
+  <meta
+    name="twitter:card"
+    content="summary_large_image"
+  />
+
+  <meta
+    name="twitter:title"
+    content={title}
+  />
+
+  <meta
+    name="twitter:description"
+    content={description}
+  />
+
+  <meta
+    name="twitter:image"
+    content={fullImageUrl}
+  />
+
+  <!-- FAVICONS -->
+
+  <link
+    rel="icon"
+    href="/favicon-gersys.ico?v=2"
+    sizes="any"
+  />
+
+  <link
+    rel="icon"
+    href="/favicon-gersys.svg?v=2"
+    type="image/svg+xml"
+  />
+
+  <link
+    rel="apple-touch-icon"
+    href="/apple-touch-icon.png"
+  />
+
+  <!-- FONTS -->
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  />
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  />
 
   <link
     href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap"
     rel="stylesheet"
   />
 
-  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  <!-- JSON-LD -->
+
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify(schema)}
+  />
+
 </head>
 
 <body>
+
   <slot />
+
 </body>
+
 </html>
