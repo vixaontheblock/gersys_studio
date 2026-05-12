@@ -29,19 +29,15 @@
       </div>
     </div>
 
-    <div class="hero-card">
-      <div class="card-top">
+    <div class="hero-image">
+      <img
+        src="/images/gallery/gersys-reception.jpg"
+        alt="Recepción de Gersys Hair Studio en Brisas del Golf, Panamá"
+      />
+
+      <div class="hero-image-badge">
         <span>GERSYS HAIR STUDIO</span>
-        <span>2021</span>
-      </div>
-
-      <div class="circle">
-        <span>G</span>
-      </div>
-
-      <div class="card-bottom">
-        <strong>Color • Nails • Hair</strong>
-        <p>Salón de belleza en Brisas del Golf.</p>
+        <strong>Beauty made personal.</strong>
       </div>
     </div>
   </div>
@@ -139,57 +135,50 @@
   color:#fff;
 }
 
-.hero-card{
-  min-height:560px;
-  border:1px solid #111;
-  border-radius:34px;
-  padding:24px;
-  background:
-    linear-gradient(145deg, rgba(255,255,255,.9), rgba(230,230,230,.9));
+.hero-image{
+  position:relative;
+  min-height:620px;
+  overflow:hidden;
+  border-radius:36px;
+  background:#eee;
   box-shadow:0 30px 90px rgba(0,0,0,.12);
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
-  transition:.35s ease;
 }
 
-.hero-card:hover{
-  transform:rotate(-1deg) translateY(-6px);
+.hero-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  transition:transform .5s ease;
 }
 
-.card-top{
-  display:flex;
-  justify-content:space-between;
-  gap:18px;
-  font-size:.74rem;
-  letter-spacing:.14em;
+.hero-image:hover img{
+  transform:scale(1.035);
 }
 
-.circle{
-  width:240px;
-  height:240px;
-  border-radius:50%;
-  border:1px solid #000;
-  display:grid;
-  place-items:center;
-  margin:auto;
+.hero-image-badge{
+  position:absolute;
+  left:22px;
+  right:22px;
+  bottom:22px;
+  padding:18px 20px;
+  border-radius:24px;
+  backdrop-filter:blur(18px);
+  background:rgba(255,255,255,.76);
+  border:1px solid rgba(255,255,255,.45);
 }
 
-.circle span{
+.hero-image-badge span{
+  display:block;
+  font-size:.72rem;
+  letter-spacing:.18em;
+  margin-bottom:8px;
+}
+
+.hero-image-badge strong{
   font-family:'Archivo Black', sans-serif;
-  font-size:8rem;
-}
-
-.card-bottom strong{
-  font-family:'Archivo Black', sans-serif;
-  font-size:2rem;
-  text-transform:uppercase;
+  font-size:1.35rem;
   line-height:1;
-}
-
-.card-bottom p{
-  margin-top:12px;
-  color:#555;
 }
 
 .hero-divider{
@@ -227,22 +216,19 @@
     font-size:clamp(4rem, 18vw, 6.8rem);
   }
 
-  .hero-card{
-    min-height:420px;
+  .hero-actions a{
+    width:100%;
+  }
+
+  .hero-image{
+    min-height:460px;
     border-radius:28px;
   }
 
-  .circle{
-    width:180px;
-    height:180px;
-  }
-
-  .circle span{
-    font-size:6rem;
-  }
-
-  .hero-actions a{
-    width:100%;
+  .hero-image-badge{
+    left:16px;
+    right:16px;
+    bottom:16px;
   }
 
   .hero-divider{
