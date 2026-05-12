@@ -6,16 +6,21 @@
 
 html{
   scroll-behavior:smooth;
+  background:#000;
 }
 
 body{
-  background:#ffffff;
-  color:#000000;
-  font-family: Helvetica, Arial, sans-serif;
+  min-height:100svh;
+  background:#000;
+  color:#000;
+  font-family:Helvetica, Arial, sans-serif;
   overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
 }
 
-img{
+img,
+svg{
   max-width:100%;
   display:block;
 }
@@ -25,23 +30,46 @@ a{
   color:inherit;
 }
 
+button,
+input,
+textarea,
+select{
+  font:inherit;
+}
+
 section{
   width:100%;
 }
 
 .container{
   width:min(1400px, 92%);
-  margin:auto;
+  margin-inline:auto;
 }
 
 .title{
-  font-family:'Archivo Black', sans-serif;
+  font-family:'Archivo Black', Helvetica, Arial, sans-serif;
   text-transform:uppercase;
-  line-height:0.95;
+  line-height:.95;
+  letter-spacing:-.04em;
 }
 
 .subtitle{
   font-size:1rem;
   line-height:1.6;
   color:#444;
+}
+
+::selection{
+  background:#000;
+  color:#fff;
+}
+
+@media(max-width:760px){
+  .container{
+    width:min(100% - 32px, 1400px);
+  }
+
+  .title{
+    letter-spacing:-.05em;
+  }
 }
