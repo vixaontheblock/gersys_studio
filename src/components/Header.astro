@@ -22,19 +22,18 @@
 
 <style>
 .header{
-  position:fixed !important;
-  top:max(14px, env(safe-area-inset-top)) !important;
+  position:fixed;
+  top:max(14px, env(safe-area-inset-top));
   left:0;
   width:100%;
-  z-index:9999 !important;
+  z-index:1000;
   pointer-events:none;
-  display:block !important;
 }
 
 .header-container{
   pointer-events:auto;
   position:relative;
-  z-index:2147483647;
+  z-index:1000;
   min-height:72px;
   padding:0 14px 0 18px;
   display:flex;
@@ -95,7 +94,7 @@
 
 @media(max-width:760px){
   .header{
-    top:max(12px, env(safe-area-inset-top)) !important;
+    top:max(12px, env(safe-area-inset-top));
   }
 
   .header-container{
