@@ -24,66 +24,78 @@
 
       <div class="location-panel">
         <div class="status-card">
-          <span class="dot"></span>
+          <span class="status-dot"></span>
+
           <div>
             <strong>Agenda tu cita</strong>
-            <p>Estamos en Brisas del Golf, Panamá.</p>
+            <p>Salón de belleza en Brisas del Golf, Panamá.</p>
           </div>
         </div>
 
         <div class="quick-actions">
-          <a href="https://wa.me/50767631224" target="_blank">WhatsApp</a>
-          <a href="tel:+50767631224">Llamar</a>
+          <a
+            href="https://wa.me/50767631224?text=Hola%20Gersys%2C%20quiero%20reservar%20una%20cita.%20%C2%BFMe%20pueden%20ayudar%20con%20disponibilidad%3F"
+            target="_blank"
+          >
+            WhatsApp
+          </a>
+
+          <a href="tel:+50767631224">
+            Llamar
+          </a>
         </div>
 
-        <div class="hours">
-          <details open>
-            <summary>
-              <span>Martes</span>
-              <strong>9:00 AM – 7:00 PM</strong>
-            </summary>
-          </details>
+        <div class="schedule-card">
+          <div class="schedule-status">
+            <span class="live-dot"></span>
 
-          <details>
-            <summary>
-              <span>Miércoles</span>
-              <strong>9:00 AM – 7:00 PM</strong>
-            </summary>
-          </details>
+            <div>
+              <strong>Horario de atención</strong>
+              <p>Martes a sábado 9AM–7PM · Domingo 11AM–4PM</p>
+            </div>
+          </div>
 
-          <details>
+          <details class="schedule-dropdown" open>
             <summary>
-              <span>Jueves</span>
-              <strong>9:00 AM – 7:00 PM</strong>
+              Ver horario por día
             </summary>
-          </details>
 
-          <details>
-            <summary>
-              <span>Viernes</span>
-              <strong>9:00 AM – 7:00 PM</strong>
-            </summary>
-          </details>
+            <div class="schedule-days">
+              <div>
+                <span>Lunes</span>
+                <strong>Cerrado</strong>
+              </div>
 
-          <details>
-            <summary>
-              <span>Sábado</span>
-              <strong>9:00 AM – 7:00 PM</strong>
-            </summary>
-          </details>
+              <div>
+                <span>Martes</span>
+                <strong>9:00 AM – 7:00 PM</strong>
+              </div>
 
-          <details>
-            <summary>
-              <span>Domingo</span>
-              <strong>11:00 AM – 4:00 PM</strong>
-            </summary>
-          </details>
+              <div>
+                <span>Miércoles</span>
+                <strong>9:00 AM – 7:00 PM</strong>
+              </div>
 
-          <details class="closed">
-            <summary>
-              <span>Lunes</span>
-              <strong>Cerrado</strong>
-            </summary>
+              <div>
+                <span>Jueves</span>
+                <strong>9:00 AM – 7:00 PM</strong>
+              </div>
+
+              <div>
+                <span>Viernes</span>
+                <strong>9:00 AM – 7:00 PM</strong>
+              </div>
+
+              <div>
+                <span>Sábado</span>
+                <strong>9:00 AM – 7:00 PM</strong>
+              </div>
+
+              <div>
+                <span>Domingo</span>
+                <strong>11:00 AM – 4:00 PM</strong>
+              </div>
+            </div>
           </details>
         </div>
       </div>
@@ -172,23 +184,27 @@ iframe{
   align-items:flex-start;
 }
 
-.dot{
+.status-dot{
   width:12px;
   height:12px;
   border-radius:50%;
   background:#000;
   margin-top:5px;
   box-shadow:0 0 0 6px rgba(0,0,0,.08);
+  flex:0 0 auto;
 }
 
-.status-card strong{
+.status-card strong,
+.schedule-status strong{
   font-family:'Archivo Black', sans-serif;
   text-transform:uppercase;
+  line-height:1;
 }
 
 .status-card p{
   color:#555;
   margin-top:6px;
+  line-height:1.45;
 }
 
 .quick-actions{
@@ -212,52 +228,78 @@ iframe{
   color:#000;
 }
 
-.hours{
-  display:grid;
-  gap:10px;
+.schedule-card{
   margin-top:auto;
+  padding:22px;
+  border-radius:28px;
+  background:#0f0f0f;
+  border:1px solid #232323;
 }
 
-details{
-  border:1px solid #2a2a2a;
-  border-radius:18px;
-  background:#111;
-  overflow:hidden;
-}
-
-summary{
-  list-style:none;
-  cursor:pointer;
-  padding:18px;
+.schedule-status{
   display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:18px;
+  align-items:flex-start;
+  gap:12px;
 }
 
-summary::-webkit-details-marker{
+.live-dot{
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  background:#58ff8a;
+  margin-top:3px;
+  box-shadow:0 0 18px #58ff8a;
+  flex:0 0 auto;
+}
+
+.schedule-status p{
+  margin-top:7px;
+  color:#999;
+  line-height:1.45;
+}
+
+.schedule-dropdown{
+  margin-top:18px;
+}
+
+.schedule-dropdown summary{
+  cursor:pointer;
+  list-style:none;
+  padding:15px 0 0;
+  color:#d9d9d9;
+  font-size:.92rem;
+}
+
+.schedule-dropdown summary::-webkit-details-marker{
   display:none;
 }
 
-summary span{
-  color:#aaa;
+.schedule-days{
+  margin-top:18px;
+  display:grid;
+  gap:12px;
 }
 
-summary strong{
-  font-size:.95rem;
+.schedule-days div{
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  padding-bottom:12px;
+  border-bottom:1px solid rgba(255,255,255,.06);
 }
 
-details[open]{
-  background:#fff;
-  color:#000;
+.schedule-days div:last-child{
+  border-bottom:0;
+  padding-bottom:0;
 }
 
-details[open] summary span{
-  color:#555;
+.schedule-days span{
+  color:#8c8c8c;
 }
 
-.closed summary strong{
-  color:#777;
+.schedule-days strong{
+  font-size:.92rem;
+  text-align:right;
 }
 
 @media(max-width:900px){
@@ -283,10 +325,9 @@ details[open] summary span{
     grid-template-columns:1fr;
   }
 
-  summary{
-    align-items:flex-start;
-    flex-direction:column;
-    gap:6px;
+  .schedule-card{
+    margin-top:0;
+    border-radius:24px;
   }
 }
 </style>

@@ -1,0 +1,64 @@
+<div class="loader" id="loader">
+  <div class="loader-inner">
+    <img src="/images/logo-gersys.svg" alt="Gersys Hair Studio" />
+    <span>Brisas del Golf • Panamá</span>
+  </div>
+</div>
+
+<style>
+.loader{
+  position:fixed;
+  inset:0;
+  z-index:10000;
+  display:grid;
+  place-items:center;
+  background:#000;
+  transition:opacity .6s ease, visibility .6s ease;
+}
+
+.loader.hide{
+  opacity:0;
+  visibility:hidden;
+}
+
+.loader-inner{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:18px;
+  animation:loaderIn .8s ease forwards;
+}
+
+.loader-inner img{
+  width:220px;
+  filter:brightness(0) invert(1);
+}
+
+.loader-inner span{
+  color:rgba(255,255,255,.55);
+  font-size:.72rem;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+}
+
+@keyframes loaderIn{
+  from{opacity:0; transform:translateY(10px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+@media(max-width:760px){
+  .loader-inner img{
+    width:170px;
+  }
+}
+</style>
+
+<script>
+  const loader = document.querySelector("#loader");
+
+  window.addEventListener("load", () => {
+    setTimeout(() => {
+      loader?.classList.add("hide");
+    }, 850);
+  });
+</script>

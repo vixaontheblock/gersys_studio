@@ -8,7 +8,8 @@ import LocalSEO from "../components/LocalSEO.astro";
 import Gallery from "../components/Gallery.astro";
 import Location from "../components/Location.astro";
 import Footer from "../components/Footer.astro";
-
+import GlobalEffects from "../components/GlobalEffects.astro";
+import Loader from "../components/Loader.astro";
 ---
 
 <BaseLayout
@@ -16,14 +17,18 @@ import Footer from "../components/Footer.astro";
   description="Salón de belleza en Brisas del Golf, Panamá. Especialistas en balayage, color, uñas, maquillaje, keratina, tratamientos capilares y styling profesional."
   url="https://gersyshairstudio.com"
 >
+  <Loader /<
   <Header />
+  <GlobalEffects />
 
   <main>
     <Hero />
     <Services />
+    <LocalSEO />
     <Gallery />
     <Location />
   </main>
 
   <Footer />
+
 </BaseLayout>

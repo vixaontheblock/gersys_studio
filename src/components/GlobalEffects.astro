@@ -1,0 +1,65 @@
+<div class="global-effects" aria-hidden="true">
+  <div class="grain"></div>
+  <div class="orb orb-one"></div>
+  <div class="orb orb-two"></div>
+</div>
+
+<style>
+.global-effects{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:9998;
+  overflow:hidden;
+}
+
+.grain{
+  position:absolute;
+  inset:0;
+  opacity:.035;
+  background-image:
+    radial-gradient(circle at 1px 1px, #000 1px, transparent 0);
+  background-size:6px 6px;
+}
+
+.orb{
+  position:absolute;
+  width:340px;
+  height:340px;
+  border-radius:50%;
+  filter:blur(80px);
+  opacity:.16;
+  animation:floatOrb 12s ease-in-out infinite alternate;
+}
+
+.orb-one{
+  top:12%;
+  right:-120px;
+  background:#fff;
+}
+
+.orb-two{
+  bottom:10%;
+  left:-140px;
+  background:#000;
+}
+
+@keyframes floatOrb{
+  from{
+    transform:translate3d(0,0,0) scale(1);
+  }
+
+  to{
+    transform:translate3d(30px,-40px,0) scale(1.12);
+  }
+}
+
+@media(max-width:760px){
+  .orb{
+    width:240px;
+    height:240px;
+    filter:blur(70px);
+    opacity:.12;
+  }
+}
+</style>
