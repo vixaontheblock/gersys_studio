@@ -1,21 +1,23 @@
-<header class="header">
+<header class="header" id="site-header">
   <div class="container header-container">
-    <a href="/" class="logo">
+    <a href="/" class="logo" aria-label="Gersys Hair Studio">
       <img src="/images/logo-gersys.svg" alt="Gersys Hair Studio" />
     </a>
 
     <nav class="nav">
       <a href="#services">Servicios</a>
+      <a href="#expertise">Expertise</a>
       <a href="#gallery">Galería</a>
       <a href="#location">Ubicación</a>
     </nav>
 
     <a
-      href="https://wa.me/50767631224?text=Hola%20Gersys%2C%20quiero%20reservar%20una%20cita."
+      href="https://gersyshairstudio.site.agendapro.com/pa/sucursal/351688"
       target="_blank"
+      rel="noopener noreferrer"
       class="header-btn"
     >
-      Reservar
+      Reservar online
     </a>
   </div>
 </header>
@@ -28,28 +30,48 @@
   width:100%;
   z-index:1000;
   pointer-events:none;
+  transition:transform .28s ease;
 }
 
 .header-container{
   pointer-events:auto;
   position:relative;
   z-index:1000;
-  min-height:72px;
-  padding:0 14px 0 18px;
+
+  min-height:76px;
+  padding:0 12px 0 18px;
+
   display:flex;
   align-items:center;
   justify-content:space-between;
-  border:1px solid rgba(0,0,0,.10);
+
+  border:1px solid rgba(0,0,0,.08);
   border-radius:999px;
-  background:rgba(255,255,255,.92);
+
+  background:rgba(255,255,255,.74);
   backdrop-filter:blur(18px);
   -webkit-backdrop-filter:blur(18px);
-  box-shadow:0 12px 40px rgba(0,0,0,.10);
+
+  box-shadow:0 14px 45px rgba(0,0,0,.08);
+
+  transition:
+    min-height .25s ease,
+    background .25s ease,
+    box-shadow .25s ease,
+    border-color .25s ease;
+}
+
+.header.scrolled .header-container{
+  min-height:64px;
+  background:rgba(255,255,255,.94);
+  border-color:rgba(0,0,0,.12);
+  box-shadow:0 12px 40px rgba(0,0,0,.12);
 }
 
 .logo{
   display:flex;
   align-items:center;
+  flex:0 0 auto;
 }
 
 .logo img{
@@ -57,20 +79,26 @@
   width:auto;
   object-fit:contain;
   display:block;
+  transition:height .25s ease;
+}
+
+.header.scrolled .logo img{
+  height:52px;
 }
 
 .nav{
   display:flex;
-  gap:8px;
-  background:#f1f1f1;
+  gap:6px;
   padding:6px;
   border-radius:999px;
+  background:rgba(0,0,0,.045);
 }
 
 .nav a{
-  padding:10px 14px;
+  padding:10px 13px;
   border-radius:999px;
-  font-size:.86rem;
+  font-size:.84rem;
+  color:#111;
   transition:.2s ease;
 }
 
@@ -80,31 +108,50 @@
 }
 
 .header-btn{
-  min-height:46px;
+  min-height:48px;
   padding:0 18px;
+
   display:flex;
   align-items:center;
   justify-content:center;
+
+  border-radius:999px;
+
   background:#000;
   color:#fff;
-  border-radius:999px;
-  font-size:.9rem;
-  transition:.2s ease;
+
+  font-size:.88rem;
+  font-weight:600;
+
+  transition:.22s ease;
 }
 
-@media(max-width:760px){
+.header-btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 12px 30px rgba(0,0,0,.18);
+}
+
+@media(max-width:860px){
   .header{
-    top:max(12px, env(safe-area-inset-top));
+    top:max(10px, env(safe-area-inset-top));
   }
 
   .header-container{
     width:94%;
-    min-height:64px;
-    padding:0 10px 0 16px;
+    min-height:66px;
+    padding:0 9px 0 14px;
+  }
+
+  .header.scrolled .header-container{
+    min-height:60px;
   }
 
   .logo img{
     height:54px;
+  }
+
+  .header.scrolled .logo img{
+    height:48px;
   }
 
   .nav{
@@ -113,8 +160,25 @@
 
   .header-btn{
     min-height:42px;
-    padding:0 15px;
-    font-size:.84rem;
+    padding:0 14px;
+    font-size:.8rem;
   }
 }
 </style>
+
+<script is:inline>
+  const header = document.querySelector("#site-header");
+
+  function updateHeader(){
+    if (!header) return;
+
+    if (window.scrollY > 24) {
+      header.classList.add("scrolled");
+    } else {
+      header.classList.remove("scrolled");
+    }
+  }
+
+  updateHeader();
+  window.addEventListener("scroll", updateHeader, { passive: true });
+</script>
