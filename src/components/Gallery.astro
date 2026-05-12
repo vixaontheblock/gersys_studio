@@ -150,8 +150,10 @@
 .lightbox{
   position:fixed;
   inset:0;
-  z-index:999999;
+  z-index:5000;
   background:rgba(0,0,0,.92);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
   display:none;
   align-items:center;
   justify-content:center;
@@ -180,7 +182,12 @@
   padding:13px 18px;
   font:inherit;
   cursor:pointer;
-  z-index:1000000;
+  z-index:5001;
+}
+
+:global(body.is-lightbox-open .header),
+:global(body.is-lightbox-open .whatsapp-float){
+  display:none !important;
 }
 
 @media(max-width:900px){
@@ -246,6 +253,7 @@
 
       lightboxImg.src = src;
       lightbox.classList.add("active");
+      document.body.classList.add("is-lightbox-open");
       document.body.style.overflow = "hidden";
     });
   });
@@ -255,6 +263,7 @@
 
     lightbox.classList.remove("active");
     lightboxImg.src = "";
+    document.body.classList.remove("is-lightbox-open");
     document.body.style.overflow = "";
   }
 
