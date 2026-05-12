@@ -1,0 +1,47 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  background:#ffffff;
+  color:#000000;
+  font-family: Helvetica, Arial, sans-serif;
+  overflow-x:hidden;
+}
+
+img{
+  max-width:100%;
+  display:block;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+section{
+  width:100%;
+}
+
+.container{
+  width:min(1400px, 92%);
+  margin:auto;
+}
+
+.title{
+  font-family:'Archivo Black', sans-serif;
+  text-transform:uppercase;
+  line-height:0.95;
+}
+
+.subtitle{
+  font-size:1rem;
+  line-height:1.6;
+  color:#444;
+}
