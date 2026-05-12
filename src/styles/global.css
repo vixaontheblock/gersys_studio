@@ -73,3 +73,14 @@ section{
     letter-spacing:-.05em;
   }
 }
+
+.header,
+main,
+footer{
+  position:relative;
+  z-index:1;
+}
+
+.header{
+  z-index:1000;
+}

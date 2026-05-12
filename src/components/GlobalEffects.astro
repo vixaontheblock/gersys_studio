@@ -9,17 +9,17 @@
   position:fixed;
   inset:0;
   pointer-events:none;
-  z-index:9998;
+  z-index:0;
   overflow:hidden;
 }
 
 .grain{
   position:absolute;
   inset:0;
-  opacity:.035;
+  opacity:.018;
   background-image:
     radial-gradient(circle at 1px 1px, #000 1px, transparent 0);
-  background-size:6px 6px;
+  background-size:8px 8px;
 }
 
 .orb{
@@ -27,21 +27,21 @@
   width:340px;
   height:340px;
   border-radius:50%;
-  filter:blur(80px);
-  opacity:.16;
+  filter:blur(90px);
+  opacity:.08;
   animation:floatOrb 12s ease-in-out infinite alternate;
 }
 
 .orb-one{
-  top:12%;
-  right:-120px;
-  background:#fff;
+  top:8%;
+  right:-140px;
+  background:#000;
 }
 
 .orb-two{
   bottom:10%;
-  left:-140px;
-  background:#000;
+  left:-160px;
+  background:#fff;
 }
 
 @keyframes floatOrb{
@@ -50,16 +50,17 @@
   }
 
   to{
-    transform:translate3d(30px,-40px,0) scale(1.12);
+    transform:translate3d(24px,-32px,0) scale(1.08);
   }
 }
 
 @media(max-width:760px){
+  .grain{
+    opacity:.012;
+  }
+
   .orb{
-    width:240px;
-    height:240px;
-    filter:blur(70px);
-    opacity:.12;
+    opacity:.06;
   }
 }
 </style>
