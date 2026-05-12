@@ -1,41 +1,81 @@
 <section class="expertise" id="expertise">
+  <div class="expertise-bg"></div>
+
   <div class="container">
     <div class="expertise-head">
       <p class="eyebrow">FORMACIÓN & EXPERTISE</p>
-      <h2 class="title">Color con técnica, estudio y visión.</h2>
+
+      <h2 class="title">
+        Especialista en color, blondes y técnicas modernas.
+      </h2>
+
+      <p class="intro">
+        Formación continua para crear resultados personalizados, precisos y técnicamente cuidados.
+      </p>
     </div>
 
-    <div class="expertise-grid">
-      <article class="expertise-card featured">
-        <span>01</span>
-        <h3>Master Class con Romeu Felipe</h3>
-        <p>
-          Formación enfocada en blondes, mechas y técnicas modernas de iluminación junto a Romeu Felipe, reconocido Wella Professionals Global Ambassador.
-        </p>
+    <div class="featured-training">
+      <span class="featured-kicker">MASTER CLASS DESTACADA</span>
+
+      <h3>
+        Romeu Felipe
+      </h3>
+
+      <p>
+        Formación enfocada en blondes, mechas y técnicas modernas de iluminación junto a Romeu Felipe, reconocido Wella Professionals Global Ambassador.
+      </p>
+
+      <div class="featured-tags">
+        <span>Blondes</span>
+        <span>Mechas</span>
+        <span>Iluminación</span>
+        <span>Wella</span>
+      </div>
+    </div>
+
+    <div class="timeline">
+      <article class="timeline-item">
+        <span class="year">2019</span>
+
+        <div>
+          <h3>Inicio como colorista</h3>
+          <p>
+            Primeros años de especialización en coloración, técnica y atención personalizada.
+          </p>
+        </div>
       </article>
 
-      <article class="expertise-card">
-        <span>02</span>
-        <h3>Master Class Brûlée</h3>
-        <p>
-          Entrenamiento en coloración, balayage, tratamientos capilares y styling con Brûlée Love For Hair.
-        </p>
+      <article class="timeline-item">
+        <span class="year">2021</span>
+
+        <div>
+          <h3>Gersys Hair Studio</h3>
+          <p>
+            Apertura del salón en Brisas del Golf, Panamá, consolidando una propuesta beauty premium en la zona.
+          </p>
+        </div>
       </article>
 
-      <article class="expertise-card">
-        <span>03</span>
-        <h3>Colorista Diamond Pro</h3>
-        <p>
-          Certificación profesional de colorimetría y perfeccionamiento intensivo con 80 horas académicas.
-        </p>
+      <article class="timeline-item">
+        <span class="year">2024</span>
+
+        <div>
+          <h3>Diamond Pro & Brûlée</h3>
+          <p>
+            Certificación Colorista Diamond Pro con 80 horas académicas y Master Class Brûlée enfocada en coloración, balayage, tratamientos capilares y styling.
+          </p>
+        </div>
       </article>
 
-      <article class="expertise-card">
-        <span>04</span>
-        <h3>Open Hair Touch</h3>
-        <p>
-          Full Day Training enfocado en técnicas de cabello, asistencia profesional y actualización continua.
-        </p>
+      <article class="timeline-item">
+        <span class="year">2025</span>
+
+        <div>
+          <h3>Open Hair Touch</h3>
+          <p>
+            Full Day Training de actualización profesional en técnicas modernas de cabello y perfeccionamiento continuo.
+          </p>
+        </div>
       </article>
     </div>
   </div>
@@ -43,12 +83,25 @@
 
 <style>
 .expertise{
-  padding:110px 0;
+  position:relative;
+  overflow:hidden;
+  padding:120px 0;
   background:#000;
   color:#fff;
 }
 
+.expertise-bg{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:
+    radial-gradient(circle at 80% 10%, rgba(255,255,255,.12), transparent 30%),
+    radial-gradient(circle at 10% 90%, rgba(255,255,255,.06), transparent 28%);
+}
+
 .expertise-head{
+  position:relative;
+  z-index:2;
   margin-bottom:48px;
 }
 
@@ -61,51 +114,126 @@
 
 .expertise-head h2{
   font-size:clamp(3rem, 8vw, 8rem);
-  max-width:1100px;
+  max-width:1150px;
 }
 
-.expertise-grid{
+.intro{
+  max-width:640px;
+  margin-top:24px;
+  color:#b8b8b8;
+  font-size:1.05rem;
+  line-height:1.7;
+}
+
+.featured-training{
+  position:relative;
+  z-index:2;
+  margin-bottom:28px;
+  padding:34px;
+  border-radius:34px;
+  background:#fff;
+  color:#000;
   display:grid;
-  grid-template-columns:repeat(4, 1fr);
+  gap:20px;
+  overflow:hidden;
+}
+
+.featured-training::after{
+  content:"EXPERTISE";
+  position:absolute;
+  right:-2vw;
+  bottom:-1.2vw;
+  font-family:'Archivo Black', sans-serif;
+  font-size:clamp(4rem, 12vw, 12rem);
+  line-height:1;
+  color:rgba(0,0,0,.04);
+  pointer-events:none;
+}
+
+.featured-kicker{
+  font-size:.75rem;
+  letter-spacing:.18em;
+  color:#555;
+}
+
+.featured-training h3{
+  position:relative;
+  z-index:2;
+  font-family:'Archivo Black', sans-serif;
+  text-transform:uppercase;
+  font-size:clamp(3rem, 8vw, 8rem);
+  line-height:.85;
+}
+
+.featured-training p{
+  position:relative;
+  z-index:2;
+  max-width:760px;
+  color:#333;
+  line-height:1.65;
+  font-size:1.05rem;
+}
+
+.featured-tags{
+  position:relative;
+  z-index:2;
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.featured-tags span{
+  padding:10px 14px;
+  border-radius:999px;
+  border:1px solid rgba(0,0,0,.14);
+  font-size:.86rem;
+}
+
+.timeline{
+  position:relative;
+  z-index:2;
+  display:grid;
   gap:14px;
 }
 
-.expertise-card{
-  min-height:340px;
-  border:1px solid #242424;
+.timeline-item{
+  position:relative;
+  display:grid;
+  grid-template-columns:220px 1fr;
+  gap:28px;
+  padding:28px;
   border-radius:30px;
-  padding:24px;
+  border:1px solid #242424;
   background:
-    radial-gradient(circle at 85% 0%, rgba(255,255,255,.10), transparent 34%),
-    #0d0d0d;
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
+    linear-gradient(135deg, rgba(255,255,255,.06), rgba(255,255,255,.025)),
+    #080808;
+  transition:.25s ease;
 }
 
-.expertise-card.featured{
-  grid-column:span 2;
-  background:#fff;
-  color:#000;
+.timeline-item:hover{
+  transform:translateY(-4px);
+  border-color:rgba(255,255,255,.35);
 }
 
-.expertise-card span{
-  color:#888;
-  font-size:.8rem;
+.year{
+  font-family:'Archivo Black', sans-serif;
+  font-size:clamp(2.5rem, 6vw, 5rem);
+  line-height:.85;
+  color:#fff;
 }
 
-.expertise-card h3{
+.timeline-item h3{
   font-family:'Archivo Black', sans-serif;
   text-transform:uppercase;
-  font-size:clamp(1.8rem, 3vw, 3.4rem);
+  font-size:clamp(1.7rem, 3vw, 3.2rem);
   line-height:.9;
+  margin-bottom:14px;
 }
 
-.expertise-card p{
-  color:inherit;
-  opacity:.75;
-  line-height:1.55;
-  max-width:520px;
+.timeline-item p{
+  max-width:760px;
+  color:#b8b8b8;
+  line-height:1.65;
 }
 
 @media(max-width:900px){
@@ -113,15 +241,20 @@
     padding:76px 0;
   }
 
-  .expertise-grid{
-    grid-template-columns:1fr;
+  .featured-training{
+    padding:24px;
+    border-radius:26px;
   }
 
-  .expertise-card,
-  .expertise-card.featured{
-    grid-column:auto;
-    min-height:260px;
+  .timeline-item{
+    grid-template-columns:1fr;
+    gap:18px;
+    padding:24px;
     border-radius:24px;
+  }
+
+  .timeline-item:hover{
+    transform:none;
   }
 }
 </style>
