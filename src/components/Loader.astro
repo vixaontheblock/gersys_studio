@@ -1,6 +1,9 @@
 <div class="loader" id="loader">
   <div class="loader-inner">
-    <img src="/images/logo-gersys.svg" alt="Gersys Hair Studio" />
+    <picture>
+      <source srcset="/images/logo-gersys.webp" type="image/webp" />
+      <img src="/images/logo-gersys.png" alt="Gersys Hair Studio" width="900" height="416" />
+    </picture>
     <span>Brisas del Golf • Panamá</span>
   </div>
 </div>
@@ -65,10 +68,17 @@
 
 <script is:inline>
   const loader = document.querySelector("#loader");
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const alreadyVisited = sessionStorage.getItem("gersys-visited");
 
-  window.addEventListener("load", () => {
-    setTimeout(() => {
-      loader?.classList.add("hide");
-    }, 900);
-  });
+  if (alreadyVisited || reducedMotion) {
+    loader?.classList.add("hide");
+  } else {
+    window.addEventListener("load", () => {
+      setTimeout(() => {
+        loader?.classList.add("hide");
+        sessionStorage.setItem("gersys-visited", "1");
+      }, 500);
+    });
+  }
 </script>

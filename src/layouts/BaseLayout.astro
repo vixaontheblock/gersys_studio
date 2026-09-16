@@ -3,7 +3,7 @@ const {
   title = "Gersys Hair Studio — Salón de belleza en Brisas del Golf",
   description = "Gersys Hair Studio es un salón de belleza en Brisas del Golf, Panamá, especializado en balayage, color, uñas, maquillaje, tratamientos capilares y styling profesional.",
   image = "/images/og-gersys.jpg",
-  url = "https://gersys-studio.vercel.app"
+  url = "https://gersyshairstudio.com"
 } = Astro.props;
 
 import "../styles/global.css";
@@ -145,6 +145,18 @@ const schema = {
   <link
     rel="canonical"
     href={url}
+  />
+
+  <meta name="theme-color" content="#000000" />
+
+  <link rel="manifest" href="/manifest.json" />
+
+  <!-- PRELOAD LCP IMAGE (hero) -->
+  <link
+    rel="preload"
+    as="image"
+    href="/images/gallery/gersys-reception.webp"
+    fetchpriority="high"
   />
 
   <!-- GOOGLE ANALYTICS -->
@@ -315,6 +327,8 @@ const schema = {
 </head>
 
 <body>
+
+  <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
 
   <slot />
 

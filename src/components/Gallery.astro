@@ -1,3 +1,23 @@
+---
+const studioImages = [
+  { file: "gersys-reception", alt: "Recepción Gersys Hair Studio", w: 843, h: 1500, wide: true },
+  { file: "gersys-lounge", alt: "Lounge Gersys Hair Studio", w: 843, h: 1500 },
+  { file: "gersys-nails", alt: "Área de uñas Gersys Hair Studio", w: 843, h: 1500 },
+  { file: "gersys-hair-area", alt: "Área de cabello Gersys Hair Studio", w: 843, h: 1500 },
+  { file: "gersys-treatment-room", alt: "Área de tratamientos Gersys Hair Studio", w: 843, h: 1500 },
+  { file: "gersys-logo-wall", alt: "Logo Gersys Hair Studio", w: 843, h: 1500, wide: true },
+];
+
+const resultImages = [
+  { file: "gersys-balayage-1", alt: "Resultado balayage Gersys Hair Studio", w: 843, h: 1500 },
+  { file: "gersys-balayage-2", alt: "Resultado color Gersys Hair Studio", w: 720, h: 1280 },
+];
+
+const mentorshipImages = [
+  { file: "gersys-team", alt: "Gersys Hair Studio mentorías y equipo", w: 1000, h: 1500 },
+];
+---
+
 <section class="gallery" id="gallery">
   <div class="container">
     <div class="gallery-head">
@@ -12,12 +32,25 @@
       </div>
 
       <div class="gallery-grid studio-grid">
-        <button class="gallery-item wide" data-full="/images/gallery/gersys-reception.jpg"><img src="/images/gallery/gersys-reception.jpg" alt="Recepción Gersys Hair Studio" loading="lazy" /></button>
-        <button class="gallery-item" data-full="/images/gallery/gersys-lounge.jpg"><img src="/images/gallery/gersys-lounge.jpg" alt="Lounge Gersys Hair Studio" loading="lazy" /></button>
-        <button class="gallery-item" data-full="/images/gallery/gersys-nails.jpg"><img src="/images/gallery/gersys-nails.jpg" alt="Área de uñas Gersys Hair Studio" loading="lazy" /></button>
-        <button class="gallery-item" data-full="/images/gallery/gersys-hair-area.jpg"><img src="/images/gallery/gersys-hair-area.jpg" alt="Área de cabello Gersys Hair Studio" loading="lazy" /></button>
-        <button class="gallery-item" data-full="/images/gallery/gersys-treatment-room.jpg"><img src="/images/gallery/gersys-treatment-room.jpg" alt="Área de tratamientos Gersys Hair Studio" loading="lazy" /></button>
-        <button class="gallery-item wide" data-full="/images/gallery/gersys-logo-wall.jpg"><img src="/images/gallery/gersys-logo-wall.jpg" alt="Logo Gersys Hair Studio" loading="lazy" /></button>
+        {studioImages.map((img) => (
+          <button
+            class={`gallery-item${img.wide ? " wide" : ""}`}
+            data-full={`/images/gallery/${img.file}.jpg`}
+            aria-label={`Ampliar imagen: ${img.alt}`}
+          >
+            <picture>
+              <source srcset={`/images/gallery/${img.file}.webp`} type="image/webp" />
+              <img
+                src={`/images/gallery/${img.file}.jpg`}
+                alt={img.alt}
+                width={img.w}
+                height={img.h}
+                loading="lazy"
+                decoding="async"
+              />
+            </picture>
+          </button>
+        ))}
       </div>
     </div>
 
@@ -28,8 +61,25 @@
       </div>
 
       <div class="gallery-grid results-grid">
-        <button class="gallery-item portrait" data-full="/images/gallery/gersys-balayage-1.jpg"><img src="/images/gallery/gersys-balayage-1.jpg" alt="Resultado balayage Gersys Hair Studio" loading="lazy" /></button>
-        <button class="gallery-item portrait" data-full="/images/gallery/gersys-balayage-2.jpg"><img src="/images/gallery/gersys-balayage-2.jpg" alt="Resultado color Gersys Hair Studio" loading="lazy" /></button>
+        {resultImages.map((img) => (
+          <button
+            class="gallery-item portrait"
+            data-full={`/images/gallery/${img.file}.jpg`}
+            aria-label={`Ampliar imagen: ${img.alt}`}
+          >
+            <picture>
+              <source srcset={`/images/gallery/${img.file}.webp`} type="image/webp" />
+              <img
+                src={`/images/gallery/${img.file}.jpg`}
+                alt={img.alt}
+                width={img.w}
+                height={img.h}
+                loading="lazy"
+                decoding="async"
+              />
+            </picture>
+          </button>
+        ))}
       </div>
     </div>
 
@@ -40,7 +90,25 @@
       </div>
 
       <div class="gallery-grid mentorship-grid">
-        <button class="gallery-item wide" data-full="/images/gallery/gersys-team.jpg"><img src="/images/gallery/gersys-team.jpg" alt="Gersys Hair Studio mentorías y equipo" loading="lazy" /></button>
+        {mentorshipImages.map((img) => (
+          <button
+            class="gallery-item wide"
+            data-full={`/images/gallery/${img.file}.jpg`}
+            aria-label={`Ampliar imagen: ${img.alt}`}
+          >
+            <picture>
+              <source srcset={`/images/gallery/${img.file}.webp`} type="image/webp" />
+              <img
+                src={`/images/gallery/${img.file}.jpg`}
+                alt={img.alt}
+                width={img.w}
+                height={img.h}
+                loading="lazy"
+                decoding="async"
+              />
+            </picture>
+          </button>
+        ))}
       </div>
     </div>
   </div>
@@ -121,6 +189,10 @@
 
 .gallery-item.portrait{
   min-height:560px;
+}
+
+.gallery-item picture{
+  display:contents;
 }
 
 .gallery-item img{

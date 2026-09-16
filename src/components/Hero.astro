@@ -30,10 +30,17 @@
     </div>
 
     <div class="hero-image">
-      <img
-        src="/images/gallery/gersys-reception.jpg"
-        alt="Recepción de Gersys Hair Studio en Brisas del Golf, Panamá"
-      />
+      <picture>
+        <source srcset="/images/gallery/gersys-reception.webp" type="image/webp" />
+        <img
+          src="/images/gallery/gersys-reception.jpg"
+          alt="Recepción de Gersys Hair Studio en Brisas del Golf, Panamá"
+          width="843"
+          height="1500"
+          fetchpriority="high"
+          decoding="async"
+        />
+      </picture>
 
       <div class="hero-image-badge">
         <span>GERSYS HAIR STUDIO</span>
@@ -142,6 +149,10 @@
   border-radius:36px;
   background:#eee;
   box-shadow:0 30px 90px rgba(0,0,0,.12);
+}
+
+.hero-image picture{
+  display:contents;
 }
 
 .hero-image img{
