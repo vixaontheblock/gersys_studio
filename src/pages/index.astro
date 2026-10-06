@@ -1,36 +1,13 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-
-import Header from "../components/Header.astro";
-import Hero from "../components/Hero.astro";
-import Services from "../components/Services.astro";
-import LocalSEO from "../components/LocalSEO.astro";
-import Gallery from "../components/Gallery.astro";
-import Location from "../components/Location.astro";
-import Footer from "../components/Footer.astro";
-import GlobalEffects from "../components/GlobalEffects.astro";
-import Loader from "../components/Loader.astro";
-import Expertise from "../components/Expertise.astro";
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import Services from '../components/Services.astro';
+import Gallery from '../components/Gallery.astro';
+import Expertise from '../components/Expertise.astro';
+import Training from '../components/Training.astro';
+import FAQ from '../components/FAQ.astro';
+import Location from '../components/Location.astro';
+import Footer from '../components/Footer.astro';
 ---
-
-<BaseLayout
-  title="Gersys Hair Studio — Salón de belleza en Brisas del Golf"
-  description="Salón de belleza en Brisas del Golf, Panamá. Especialistas en balayage, color, uñas, maquillaje, keratina, tratamientos capilares y styling profesional."
-  url="https://gersyshairstudio.com"
->
-  <Loader />
-  <Header />
-  <GlobalEffects />
-
-  <main id="main-content">
-    <Hero />
-    <Services />
-    <LocalSEO />
-    <Expertise />
-    <Gallery />
-    <Location />
-  </main>
-
-  <Footer />
-
-</BaseLayout>
+<BaseLayout><Header /><main id="main-content"><Hero /><Services /><Gallery /><Expertise /><Training /><FAQ /><Location /></main><Footer /></BaseLayout>

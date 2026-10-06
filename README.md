@@ -1,46 +1,45 @@
-# Astro Starter Kit: Basics
+# Gersys Hair Studio
+
+Web estática en Astro para el salón de Brisas del Golf. Dominio de producción confirmado: https://gersys-studio.vercel.app/.
+
+## Trabajar en el proyecto
+
+Se requiere Node.js 22.12 o posterior, compatible con Astro 6.
 
 ```sh
-npm create astro@latest -- --template basics
+npm ci
+npm run dev
+npm run build
+npm run preview
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+El resultado de producción se genera en `dist/`. No requiere servidor de aplicación ni base de datos. No colocar reglas que envíen todas las rutas a index.html: las páginas de servicios tienen su propio HTML y existe una página 404.
 
-## 🚀 Project Structure
+## Publicar en el proyecto existente de Vercel
 
-Inside of your Astro project, you'll see the following folders and files:
+Reemplazar los archivos del repositorio conectado con esta versión y publicar en el mismo proyecto de Vercel. Preset: Astro. Comando de compilación: `npm run build`. Carpeta de salida: `dist`.
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
+No es necesario comprar un dominio ni recuperar el .com para utilizar esta versión. Si existe una variable `SITE_URL` en Vercel, eliminar su antiguo valor o cambiarla a `https://gersys-studio.vercel.app`. El valor predeterminado del código ya es ese dominio. La variable solo se necesita para una futura migración intencional.
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+Esta entrega no cambia el despliegue público por sí sola.
 
-## 🧞 Commands
+## Contenido
 
-All commands are run from the root of the project, from a terminal:
+- `src/data/site.ts`: contacto, reservas, catálogo y textos de las páginas de servicios.
+- `src/components/`: portada, servicios, fotografías, salón, preguntas, ubicación y pie.
+- `src/styles/global.css`: diseño y adaptaciones móviles.
+- `src/layouts/BaseLayout.astro`: títulos, descripciones, canonical, datos estructurados y Analytics.
+- `src/pages/servicios/[slug].astro`: genera las tres páginas específicas.
+- `src/pages/sitemap.xml.ts` y `robots.txt.ts`: se generan con el mismo dominio que las páginas.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+Se mantiene el identificador de Analytics original y su archivo de verificación de Google. Analytics solo se carga en compilaciones de producción. No se enviaron reservas ni mensajes durante la revisión.
 
-## 👀 Want to learn more?
+## Después de publicar
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+En la propiedad de Search Console correspondiente a `https://gersys-studio.vercel.app/`, enviar `sitemap.xml` e inspeccionar la portada y las tres páginas de servicios. Solicitar la indexación después de verificar la versión desplegada. Mantener esta misma URL en el perfil de Google Business y en las redes del salón.
+
+Para el nombre de sitio se declara `WebSite.name = Gersys Hair Studio` y `alternateName = Gersys`, además de unificar canonical y Open Graph. Google elige el nombre automáticamente: el cambio requiere un nuevo rastreo y no tiene fecha ni resultado garantizados.
+
+No se han inventado reseñas, puntuaciones, tarifas, disponibilidad ni certificaciones adicionales. Dirección, horarios y formación se conservaron de los datos del proyecto: el negocio debe mantenerlos actualizados.
+
+Documentación oficial: https://developers.google.com/search/docs/appearance/site-names y https://developers.google.com/search/docs/appearance/structured-data/local-business.

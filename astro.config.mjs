@@ -1,5 +1,4 @@
-// @ts-check
 import { defineConfig } from 'astro/config';
-
-// https://astro.build/config
-export default defineConfig({});
+// The confirmed production domain; override only when deliberately migrating.
+const site = process.env.SITE_URL || 'https://gersys-studio.vercel.app';
+export default defineConfig({ site, trailingSlash: 'always' });
