@@ -1,8 +1,0 @@
----
-import { services, whatsapp } from '../data/site';
----
-<section class="section container" id="services" aria-labelledby="services-title">
- <div class="section-heading"><div><p class="eyebrow">Nuestros servicios</p><h2 id="services-title">¿Qué te gustaría<br /><em>hacerte hoy?</em></h2></div><p>Desde un retoque de color hasta un cambio completo. Encuentra tu servicio y conversemos sobre tu próxima cita.</p></div>
- <div class="services-list">{services.map(service => <article class="service-row"><h3>{service.name}</h3><p>{service.text}</p>{service.slug ? <a class="text-link" href={`/servicios/${service.slug}/`} aria-label={`Conocer el servicio de ${service.name}`}>Conocer el servicio</a> : <a class="text-link" href={whatsapp(`consultar sobre ${service.name.toLowerCase()}`)} target="_blank" rel="noopener noreferrer" aria-label={`Consultar ${service.name} por WhatsApp`}>Consultar</a>}</article>)}</div>
- <p class="service-note">Para conocer el precio y el tiempo de tu servicio, escríbenos antes de reservar.</p>
-</section>
