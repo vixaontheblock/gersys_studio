@@ -1,0 +1,8 @@
+---
+import { business, whatsapp } from '../data/site';
+---
+<section class="location section" id="location" aria-labelledby="location-title"><div class="container location-grid">
+ <div><p class="eyebrow">Te esperamos en Brisas</p><h2 id="location-title">Tu próxima cita,<br /><em>aquí.</em></h2><address><strong>Gersys Hair Studio</strong><br />{business.address}<br />{business.locality}<br /><a href={`tel:${business.phone}`}>{business.displayPhone}</a></address><div class="actions"><a class="button" href={whatsapp()} target="_blank" rel="noopener noreferrer">Hablemos por WhatsApp</a><a class="text-link" href={business.maps} target="_blank" rel="noopener noreferrer">Cómo llegar</a></div></div>
+ <div class="visit-details"><h3>Horario del salón</h3><dl><div><dt>Martes a sábado</dt><dd>9:00 a. m. – 7:00 p. m.</dd></div><div><dt>Domingo</dt><dd>11:00 a. m. – 4:00 p. m.</dd></div><div><dt>Lunes</dt><dd>Cerrado</dd></div></dl><p>Consulta la disponibilidad de tu servicio antes de visitarnos.</p><a class="text-link" href={business.booking} target="_blank" rel="noopener noreferrer">Ver la agenda online</a></div>
+ <div class="map-wrap"><iframe title="Ubicación de Gersys Hair Studio en Brisas del Golf" src="https://www.google.com/maps?q=Gersys%20Hair%20Studio%20Brisas%20del%20Golf%20Panama&output=embed" width="1200" height="320" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe><a href={business.maps} target="_blank" rel="noopener noreferrer">Abrir ubicación en Google Maps</a></div>
+</div></section>

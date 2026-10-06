@@ -1,0 +1,25 @@
+---
+const photos = [
+ { file: 'gersys-balayage-1', caption: 'Balayage y ondas', alt: 'Balayage con mechas claras y ondas largas', width: 843, height: 1500 },
+ { file: 'gersys-balayage-2', caption: 'Color e iluminación', alt: 'Cabello a la altura de los hombros con iluminación y acabado liso', width: 720, height: 1280 },
+];
+---
+<section class="gallery section" id="gallery" aria-labelledby="gallery-title"><div class="container">
+ <div class="section-heading"><div><p class="eyebrow">Hecho en Gersys</p><h2 id="gallery-title">El color se aprecia<br /><em>en el cabello.</em></h2></div><p>Una muestra de nuestro trabajo. Guarda la referencia que te guste y cuéntanos qué tienes en mente.</p></div>
+ <div class="results-grid">{photos.map(photo => <figure><a class="gallery-open" href={`/images/gallery/${photo.file}.webp`} data-caption={photo.caption} aria-label={`Ampliar: ${photo.caption}`}><img src={`/images/gallery/${photo.file}.webp`} srcset={`/images/gallery/${photo.file}-480.webp 480w, /images/gallery/${photo.file}.webp ${photo.width}w`} sizes="(max-width: 760px) 90vw, 43vw" alt={photo.alt} width={photo.width} height={photo.height} loading="lazy" decoding="async" /></a><figcaption><span>{photo.caption}</span><span>Gersys Hair Studio</span></figcaption></figure>)}</div>
+ <a class="text-link" href="https://www.instagram.com/gersyshairstudio/" target="_blank" rel="noopener noreferrer">Más del salón en Instagram</a>
+ </div>
+ <dialog id="photo-dialog" aria-label="Fotografía ampliada"><form method="dialog"><button class="button" autofocus>Cerrar fotografía</button></form><img alt="" /><p class="photo-caption"></p></dialog>
+</section>
+<script>
+ const dialog = document.querySelector<HTMLDialogElement>('#photo-dialog');
+ const image = dialog?.querySelector('img');
+ const caption = dialog?.querySelector('.photo-caption');
+ let trigger: HTMLAnchorElement | null = null;
+ document.querySelectorAll<HTMLAnchorElement>('.gallery-open').forEach(link => link.addEventListener('click', event => {
+  if (!dialog || !image || !caption || typeof dialog.showModal !== 'function' || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+  event.preventDefault(); trigger = link; image.src = link.href; image.alt = link.querySelector('img')?.alt || ''; caption.textContent = link.dataset.caption || ''; dialog.showModal(); document.body.classList.add('modal-open');
+ }));
+ dialog?.addEventListener('close', () => { document.body.classList.remove('modal-open'); trigger?.focus(); });
+ dialog?.addEventListener('click', event => { if (event.target === dialog) { const r = dialog.getBoundingClientRect(); if(event.clientX < r.left || event.clientX > r.right || event.clientY < r.top || event.clientY > r.bottom) dialog.close(); } });
+</script>
